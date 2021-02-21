@@ -6,13 +6,15 @@ import (
 )
 
 func main() {
-	// Uncomment the line with the desired files (add other lines if needed)
-	files := []string{ "a" }
-	// files := []string{ "a", "b", "c", "d", "e", "f" }
-	// files := []string{ "a", "b" }
-	// files := []string{ "a", "b", "e", "f" }
-	// files := []string{ "c" }
-	// files := []string{ "d" }
+	files := []string{
+		// Uncomment the line with the desired files (add other lines if needed)
+		"a",
+		// "a", "b", "c", "d", "e", "f",
+		// "a", "b",
+		// "a", "b", "e", "f",
+		// "c",
+		// "d",
+	}
 
 	for _, fileName := range files {
 		fmt.Printf("****************** INPUT: %s\n", fileName)
