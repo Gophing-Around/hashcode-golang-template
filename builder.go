@@ -1,6 +1,6 @@
 package main
 
-func buildInput(inputLines string) int {
+func buildInput(inputSet string) int {
 	return 42
 }
 
