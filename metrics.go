@@ -1,9 +1,9 @@
 package main
 
-func printInputMetrics(input int) {
+func printInputMetrics(config *Config) {
 
 }
 
-func printResultMetrics(result int) {
+func printResultMetrics(config *Config) {
 
 }

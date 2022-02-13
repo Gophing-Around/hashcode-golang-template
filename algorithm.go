@@ -1,5 +1,7 @@
 package main
 
-func algorithm(input int) int {
+func algorithm(
+	config *Config,
+) int {
 	return 42
 }

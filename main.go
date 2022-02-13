@@ -7,27 +7,27 @@ import (
 
 func main() {
 	files := []string{
-		// Uncomment the line with the desired files (add other lines if needed)
 		"a",
-		// "a", "b", "c", "d", "e", "f",
-		// "a", "b",
-		// "a", "b", "e", "f",
+		// "b",
 		// "c",
 		// "d",
+		// "e",
+		// "f",
 	}
 
 	for _, fileName := range files {
-		fmt.Printf("****************** INPUT: %s\n", fileName)
+		fmt.Printf("Processing input: %s\n", fileName)
 		inputSet := readFile(fmt.Sprintf("./inputFiles/%s.in", fileName))
 
-		input := buildInput(inputSet)
-		printInputMetrics(input)
+		config := buildInput(inputSet)
+		printInputMetrics(config)
 
-		result := algorithm(input)
+		result := algorithm(config)
 
 		output := buildOutput(result)
-		printResultMetrics(result)
-		
+		printResultMetrics(config)
+
 		ioutil.WriteFile(fmt.Sprintf("./result/%s.out", fileName), []byte(output), 0644)
+		fmt.Printf("Wrote output for: %s\n", fileName)
 	}
 }
