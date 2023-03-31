@@ -30,7 +30,7 @@ func TestReadInput(t *testing.T) {
 			doneChannel <- true
 		}
 
-		ReadInput("mock/file_mock.txt", 8, handleWordsOnLine)
+		ReadInput("mock/file_mock.txt", 8, 10, handleWordsOnLine)
 
 		require.Len(t, result, 6)
 		require.Equal(t, `0-0`, result[0])

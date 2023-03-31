@@ -10,14 +10,14 @@ import (
 
 type ReadInputHandler func(lineReady <-chan bool, wordChannel <-chan string, readNextLine chan<- bool, doneChannel chan<- bool)
 
-func ReadInput(fileName string, bufferSize int, handler ReadInputHandler) {
+func ReadInput(fileName string, bufferSize int, maxWorldsOnLine int, handler ReadInputHandler) {
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatalln(err)
 	}
 	defer file.Close()
 
-	wordChannel := make(chan string, 100)
+	wordChannel := make(chan string, maxWorldsOnLine)
 	lineReady := make(chan bool, 1)
 	readNextLine := make(chan bool, 1)
 	doneChannel := make(chan bool, 1)
